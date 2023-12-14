@@ -1,0 +1,5 @@
+.gradient {
+    background: linear-gradient(270deg, #087AFF 38.5%, #A3FFE3 98.16%);
+    opacity: 0.85;
+    filter: blur(89.5px);
+}
