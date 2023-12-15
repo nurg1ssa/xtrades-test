@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage:{
         profileBackground: "url('./assets/profileBack.png')",
+        plusButton: "url('assets/plusButton.svg')",
       }
     },
   },
