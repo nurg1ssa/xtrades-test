@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { WeeklyChallengesComponent } from './components/main-content/weekly-challenges/weekly-challenges.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { WeeklyChallengesComponent } from './components/main-content/weekly-chal
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
