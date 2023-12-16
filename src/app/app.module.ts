@@ -11,6 +11,7 @@ import { ParticipantsComponent } from './components/main-content/leaderboard/par
 import { ContestService } from './services/contest.service';
 import { LeadersComponent } from './components/main-content/leaderboard/leaders/leaders.component';
 import { LeaderImgComponent } from './components/main-content/leaderboard/leaders/leader-img/leader-img.component';
+import { SponsorComponent } from './components/main-content/leaderboard/sponsor/sponsor.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LeaderImgComponent } from './components/main-content/leaderboard/leader
     ParticipantsComponent,
     LeadersComponent,
     LeaderImgComponent,
+    SponsorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [UserService, ContestService],

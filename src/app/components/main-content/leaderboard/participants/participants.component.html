@@ -1,9 +1,9 @@
 <div class="flex justify-between">
     <div class="relative w-12 h-4">
-        <img *ngFor="let i of [0, 1, 2]" class="absolute rounded-full w-4 h-4 object-cover"
+        <img *ngFor="let i of [0, 1, 2]" class="absolute rounded-full w-4 h-4 object-cover cursor-pointer"
             [style.margin-left.px]="i * 10" [src]="participants[i].imagePath" alt="Image {{ i + 1 }}">
         <div class="h-4 w-4 rounded-full absolute ml-[30px] flex 
-        bg-[#2B2E30] items-center justify-center text-[8px]">
+        bg-[#2B2E30] items-center justify-center text-[8px] cursor-pointer">
             {{participants.length-3}}
         </div>
     </div>

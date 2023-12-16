@@ -8,8 +8,3 @@
     background: linear-gradient(90deg, rgba(255, 111, 111, 0.00) 0%, #FF6F6F 100%);
 }
 
-.bg-gradient-zoom {
-    background: linear-gradient(to top right, #FF00E5, #00FFD1);
-    background-size: 500px 500px;
-    backdrop-filter: brightness() blur(50px); /* Adjust brightness value as needed */
-}

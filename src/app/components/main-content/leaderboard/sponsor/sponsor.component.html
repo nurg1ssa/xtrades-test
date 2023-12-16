@@ -1,0 +1,32 @@
+
+<div class="flex justify-between">
+    <div class="flex">
+        <div class="flex">
+            <img class="w-6 h-6 rounded-3xl" [src]="sponsor.imagePath" alt="">
+            <div class="ml-2">
+                <div class="text-[10px] font-medium">{{sponsor.name}}</div>
+                <div class="text-[8px] opacity-50">{{sponsor.username}}</div>
+            </div>
+        </div>
+        <div class="ml-[10px] flex">
+            <img src="assets/xBitsCircle.svg" alt="">
+            <div class="ml-2">
+                <div class="text-[10px] font-medium">{{sponsor.xBitz}}</div>
+                <div class="text-[8px] opacity-50">@xBits prize</div>
+            </div>
+        </div>
+    </div>
+    <div class="flex">
+        <div class="w-6 h-6 flex items-center justify-center rounded-full border-[0.5px]"
+            [style]="isFinished ? 'border-color: #FF6F6F; background-color: #261516;' : 'border-color: #FFF; background-color: #42474A;'">
+            <span class="text-xs" [style]="isFinished?'color:#FF6F6F':'color:#FFF'">{{days}}</span>
+        </div>
+        <div class="ml-2">
+            <div class="text-[10px] text-[#FF6F6F] font-medium"
+                [style]="isFinished?'color:#FF6F6F':'color:#FFF'">Days</div>
+            <div *ngIf="isFinished" class="text-[8px] text-[#FF6F6F]">past</div>
+            <div *ngIf="!isFinished" class="text-[8px] text-[#FFF]">left</div>
+
+        </div>
+    </div>
+</div>

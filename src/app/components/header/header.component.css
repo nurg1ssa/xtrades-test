@@ -4,3 +4,8 @@
     filter: blur(89.5px);
     z-index: -1;
 }
+
+.addUser:hover svg path {
+    stroke: #A3FFE3;
+    transition: stroke .2s;
+}

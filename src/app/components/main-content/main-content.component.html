@@ -2,6 +2,5 @@
     Competitions
 </div>
 <div class="mb-4 flex flex-col gap-[10px]">
-    <app-leaderboard  [contest]="weeklyContest[0]"></app-leaderboard>
-    <app-leaderboard [contest]="weeklyContest[1]"></app-leaderboard>
+    <app-leaderboard *ngFor="let contest of weeklyContest"  [contest]="contest"></app-leaderboard>
 </div>

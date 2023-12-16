@@ -7,8 +7,8 @@ export class Leader {
   public yields: number;
   public income: string;
   public incomePercent: number;
-  public imagePath: string
-
+  public imagePath: string;
+  public colorBack: string;
 
   constructor(
     id: number,
@@ -19,7 +19,8 @@ export class Leader {
     yields: number,
     income: string,
     incomePercent: number,
-    imagePath: string
+    imagePath: string,
+    colorBack: string,
   ) {
     this.id = id;
     this.name = name;
@@ -30,6 +31,6 @@ export class Leader {
     this.income = income;
     this.incomePercent = incomePercent;
     this.imagePath = imagePath;
-
+    this.colorBack = colorBack
   }
 }

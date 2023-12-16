@@ -10,3 +10,7 @@ body{
     color: #fff;
     font-family: 'Poppins';
 }
+body::-webkit-scrollbar {
+    display: none;
+  }
+
