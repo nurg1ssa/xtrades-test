@@ -9,3 +9,9 @@
     stroke: #A3FFE3;
     transition: stroke .2s;
 }
+
+
+.addUser:active svg path {
+    stroke: #A3FFE3;
+    transition: stroke .2s;
+}
