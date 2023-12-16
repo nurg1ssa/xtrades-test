@@ -1,37 +1,40 @@
 <div class="main-container w-full p-[15px]">
     <!-- participants 18 more -->
-    <app-participants [isLate]="isLate"></app-participants>
+    <app-participants [isLate]="contest.isFinished" [participants]="contest.participants"></app-participants>
 
-    <div class="mt-[18px] text-xl font-medium" [style]="theme=='Weekly Challenges'?'opacity:0.5':null">
-        {{theme}}
+    <div class="mt-[18px] text-xl font-medium" [style]="contest.isFinished ?'opacity:0.5':null">
+        {{contest.name}}
     </div>
     <!-- leaders -->
     <app-leaders [leaders]="leaders"></app-leaders>
     <div class="flex justify-between">
         <div class="flex">
             <div class="flex">
-                <img src="assets/users-img/Roger K.svg" alt="">
+                <img class="w-6 h-6 rounded-3xl" [src]="sponsor.imagePath" alt="">
                 <div class="ml-2">
-                    <div class="text-[10px] font-medium">Roger K</div>
-                    <div class="text-[8px] opacity-50">@rog13k</div>
+                    <div class="text-[10px] font-medium">{{sponsor.name}}</div>
+                    <div class="text-[8px] opacity-50">{{sponsor.username}}</div>
                 </div>
             </div>
             <div class="ml-[10px] flex">
                 <img src="assets/xBitsCircle.svg" alt="">
                 <div class="ml-2">
-                    <div class="text-[10px] font-medium">20,000</div>
+                    <div class="text-[10px] font-medium">{{sponsor.xBitz}}</div>
                     <div class="text-[8px] opacity-50">@xBits prize</div>
                 </div>
             </div>
         </div>
         <div class="flex">
-            <div
-                class="w-6 h-6 flex items-center justify-center bg-[#261516] rounded-full border-[#FF6F6F] border-[0.5px]">
-                <span class="text-[#FF6F6F] text-xs">3</span>
+            <div class="w-6 h-6 flex items-center justify-center rounded-full border-[0.5px]"
+                [style]="contest.isFinished ? 'border-color: #FF6F6F; background-color: #261516;' : 'border-color: #FFF; background-color: #42474A;'">
+                <span class="text-xs" [style]="contest.isFinished?'color:#FF6F6F':'color:#FFF'">{{contest.days}}</span>
             </div>
             <div class="ml-2">
-                <div class="text-[10px] text-[#FF6F6F] font-medium">Days</div>
-                <div class="text-[8px] text-[#FF6F6F]">past</div>
+                <div class="text-[10px] text-[#FF6F6F] font-medium"
+                    [style]="contest.isFinished?'color:#FF6F6F':'color:#FFF'">Days</div>
+                <div *ngIf="contest.isFinished" class="text-[8px] text-[#FF6F6F]">past</div>
+                <div *ngIf="!contest.isFinished" class="text-[8px] text-[#FFF]">left</div>
+
             </div>
         </div>
     </div>

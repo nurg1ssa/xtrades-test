@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Leader } from 'src/app/models/leader.model';
-import { LeaderboardService } from 'src/app/services/leaderboard.service';
+import { Contest } from 'src/app/models/contest.model';
+import { ContestService } from 'src/app/services/contest.service';
 
 @Component({
   selector: 'app-main-content',
@@ -9,19 +9,16 @@ import { LeaderboardService } from 'src/app/services/leaderboard.service';
   styleUrls: ['./main-content.component.css'],
 })
 export class MainContentComponent implements OnDestroy {
-  wCLeaders: Leader[];
-  dGWLeaders: Leader[];
+  weeklyContest: Contest[] = [];
   private subscription: Subscription;
 
-  constructor(private lboardService: LeaderboardService) {
-    this.wCLeaders = this.lboardService.getWCLeader();
-    this.dGWLeaders = this.lboardService.getdGWLeaders()
-    this.subscription = this.lboardService.wCLeadersData.subscribe((data) => {
-      this.wCLeaders = data;
+
+  constructor(private contestService: ContestService) {
+    this.weeklyContest = this.contestService.getContest()
+    this.subscription = this.contestService.weeklyContestData.subscribe((data) => {
+      this.weeklyContest = data;
     });
-    this.subscription = this.lboardService.dGWLeadersData.subscribe((data) => {
-      this.dGWLeaders = data;
-    });
+
   }
 
   ngOnDestroy() {

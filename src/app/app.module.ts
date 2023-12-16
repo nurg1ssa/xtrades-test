@@ -8,8 +8,9 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { WeeklyChallengesComponent } from './components/main-content/leaderboard/leaderboard.component';
 import { UserService } from './services/user.service';
 import { ParticipantsComponent } from './components/main-content/leaderboard/participants/participants.component';
-import { LeaderboardService } from './services/leaderboard.service';
+import { ContestService } from './services/contest.service';
 import { LeadersComponent } from './components/main-content/leaderboard/leaders/leaders.component';
+import { LeaderImgComponent } from './components/main-content/leaderboard/leaders/leader-img/leader-img.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,11 @@ import { LeadersComponent } from './components/main-content/leaderboard/leaders/
     MainContentComponent,
     WeeklyChallengesComponent,
     ParticipantsComponent,
-    LeadersComponent
+    LeadersComponent,
+    LeaderImgComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [UserService,LeaderboardService],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [UserService, ContestService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

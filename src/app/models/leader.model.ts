@@ -1,4 +1,5 @@
 export class Leader {
+  public id: number;
   public name: string;
   public verified: boolean;
   public alerts: number;
@@ -6,16 +7,21 @@ export class Leader {
   public yields: number;
   public income: string;
   public incomePercent: number;
+  public imagePath: string
+
 
   constructor(
+    id: number,
     name: string,
     verified: boolean,
     alerts: number,
     winRate: number,
     yields: number,
     income: string,
-    incomePercent: number
+    incomePercent: number,
+    imagePath: string
   ) {
+    this.id = id;
     this.name = name;
     this.verified = verified;
     this.alerts = alerts;
@@ -23,5 +29,7 @@ export class Leader {
     this.yields = yields;
     this.income = income;
     this.incomePercent = incomePercent;
+    this.imagePath = imagePath;
+
   }
 }

@@ -1,11 +1,10 @@
 <div class="flex justify-between">
     <div class="relative w-12 h-4">
-        <img *ngFor="let user of ['user1', 'Roger Korsgaard', 'Charlie Herwitz']; let i = index"
-            class="absolute rounded-full w-4 h-4 object-cover" [style.margin-left.px]="i * 10"
-            [src]="'assets/users-img/' + user + '.svg'" alt="Image {{ i + 1 }}">
+        <img *ngFor="let i of [0, 1, 2]" class="absolute rounded-full w-4 h-4 object-cover"
+            [style.margin-left.px]="i * 10" [src]="participants[i].imagePath" alt="Image {{ i + 1 }}">
         <div class="h-4 w-4 rounded-full absolute ml-[30px] flex 
         bg-[#2B2E30] items-center justify-center text-[8px]">
-            18
+            {{participants.length-3}}
         </div>
     </div>
     <div *ngIf="isLate" class="text-[10px] opacity-50">

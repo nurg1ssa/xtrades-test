@@ -1,6 +1,6 @@
 <div class="mt-[22px] mb-[20px] flex flex-col gap-[10px]">
     <div *ngFor="let leader of leaders;let i = index" class="flex rounded-lg bg-black overflow-hidden relative">
-        <div class="min-w-[50px] relative w-[50px] bg-green-200 tracking-[1.32px] ">
+        <div class="min-w-[50px] relative w-[50px] tracking-[1.32px] bg-gradient-zoom ">
             <div
                 class="absolute flex items-start justify-start top-[-5px] left-[6px] text-[#0B254D] italic opacity-20 font-semibold gap-[2px]">
                 <span class="text-[33px] align-self-start">{{i+1}}</span>
@@ -8,8 +8,7 @@
                 <span *ngIf="i==1" class="text-xl align-self-end">nd</span>
                 <span *ngIf="i==2" class="text-xl align-self-end">rd</span>
             </div>
-            <img class="w-[48px] h-[41px] absolute top-[18px] left-[11px]"
-                [src]="'assets/users-img/'+ leader.name +'.svg'" [alt]="'Winner'+i">
+            <app-leader-img [imagePath]="leader.imagePath" [index]="leader.id"></app-leader-img>
         </div>
         <div class="ml-[22px] w-full relative">
             <div class="mt-2 flex gap-[5px]">
