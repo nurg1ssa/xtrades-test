@@ -1,0 +1,43 @@
+<div class="main-container w-full p-[15px]">
+    <!-- participants 18 more -->
+    <app-participants [isLate]="isLate"></app-participants>
+
+    <div class="mt-[18px] text-xl font-medium" [style]="theme=='Weekly Challenges'?'opacity:0.5':null">
+        {{theme}}
+    </div>
+    <!-- leaders -->
+    <app-leaders [leaders]="leaders"></app-leaders>
+    <div class="flex justify-between">
+        <div class="flex">
+            <div class="flex">
+                <img src="assets/users-img/Roger K.svg" alt="">
+                <div class="ml-2">
+                    <div class="text-[10px] font-medium">Roger K</div>
+                    <div class="text-[8px] opacity-50">@rog13k</div>
+                </div>
+            </div>
+            <div class="ml-[10px] flex">
+                <img src="assets/xBitsCircle.svg" alt="">
+                <div class="ml-2">
+                    <div class="text-[10px] font-medium">20,000</div>
+                    <div class="text-[8px] opacity-50">@xBits prize</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex">
+            <div
+                class="w-6 h-6 flex items-center justify-center bg-[#261516] rounded-full border-[#FF6F6F] border-[0.5px]">
+                <span class="text-[#FF6F6F] text-xs">3</span>
+            </div>
+            <div class="ml-2">
+                <div class="text-[10px] text-[#FF6F6F] font-medium">Days</div>
+                <div class="text-[8px] text-[#FF6F6F]">past</div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-[25px] px-[45px] py-[14px] flex items-center justify-center rounded-[13px] 
+    bg-[#303236] border-[0.5px] border-solid border-white border-opacity-20 
+    text-xs font-semibold tracking-[1.2px] opacity-80">
+        VIEW
+    </div>
+</div>

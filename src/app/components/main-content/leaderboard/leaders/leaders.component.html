@@ -1,0 +1,45 @@
+<div class="mt-[22px] mb-[20px] flex flex-col gap-[10px]">
+    <div *ngFor="let leader of leaders;let i = index" class="flex rounded-lg bg-black overflow-hidden relative">
+        <div class="min-w-[50px] relative w-[50px] bg-green-200 tracking-[1.32px] ">
+            <div
+                class="absolute flex items-start justify-start top-[-5px] left-[6px] text-[#0B254D] italic opacity-20 font-semibold gap-[2px]">
+                <span class="text-[33px] align-self-start">{{i+1}}</span>
+                <span *ngIf="i==0" class="text-xl align-self-end">st</span>
+                <span *ngIf="i==1" class="text-xl align-self-end">nd</span>
+                <span *ngIf="i==2" class="text-xl align-self-end">rd</span>
+            </div>
+            <img class="w-[48px] h-[41px] absolute top-[18px] left-[11px]"
+                [src]="'assets/users-img/'+ leader.name +'.svg'" [alt]="'Winner'+i">
+        </div>
+        <div class="ml-[22px] w-full relative">
+            <div class="mt-2 flex gap-[5px]">
+                {{leader.name}}
+                <img *ngIf="leader.verified" src="assets/verified.svg" alt="verified">
+            </div>
+            <!-- stats -->
+            <div class="flex mb-[11px]">
+                <div class="flex mr-[42px]">
+                    <div class="mr-[10px]">
+                        <div class="text-sm font-medium">{{leader.alerts}}</div>
+                        <div class="text-[10px] opacity-50">Alerts</div>
+                    </div>
+                    <div class="mr-[10px]">
+                        <div class="text-sm font-medium">{{leader.winRate}}%</div>
+                        <div class="text-[10px] opacity-50">Win Rate</div>
+                    </div>
+                    <div>
+                        <div class="text-sm font-medium">{{leader.yields}}%</div>
+                        <div class="text-[10px] opacity-50">Yield</div>
+                    </div>
+                </div>
+                <!-- income -->
+                <div class=" text-right pl-1" [style]="leader.income[0]=='+'?'color:#88FFC7':'color:#FF6F6F'">
+                    <div class="text-sm">{{leader.income}}</div>
+                    <div class="text-[10px]">{{leader.incomePercent}}%</div>
+                </div>
+            </div>
+            <div *ngIf="leader.income[0]=='+'" class="gradient-green absolute top-0 w-full h-full"></div>
+            <div *ngIf="leader.income[0]=='-'" class="gradient-red absolute top-0 w-full h-full"></div>
+        </div>
+    </div>
+</div>

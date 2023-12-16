@@ -15,4 +15,9 @@ export class UserService {
     return this.user
   }
 
+  calculateAbbreviation(): string {
+    const initials = this.user.name.split(' ').map(word => word.charAt(0)).join('');
+    return initials.toUpperCase();
+  }
+
 }

@@ -1,0 +1,9 @@
+.gradient-green {
+    background: linear-gradient(90deg, rgba(129, 237, 186, 0.00) 0%, #54FFAE 100%);
+    opacity: 0.15;
+}
+
+.gradient-red {
+    opacity: 0.15;
+    background: linear-gradient(90deg, rgba(255, 111, 111, 0.00) 0%, #FF6F6F 100%);
+}

@@ -2,6 +2,6 @@
     Competitions
 </div>
 <div class="mb-4 flex flex-col gap-[10px]">
-    <app-weekly-challenges></app-weekly-challenges>
-    <app-weekly-challenges></app-weekly-challenges>
+    <app-leaderboard [theme]="'Weekly Challenges'" [leaders]="wCLeaders" [isLate]="true"></app-leaderboard>
+    <app-leaderboard [theme]="'Double Gain Week Contest'" [leaders]="dGWLeaders"></app-leaderboard>
 </div>

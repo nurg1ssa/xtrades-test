@@ -11,15 +11,22 @@ import { UserService } from 'src/app/services/user.service';
 export class HeaderComponent implements OnDestroy {
   user: User;
   private subscription: Subscription;
+  userNameAbbreviation: string = '';
 
   constructor(private userService: UserService) {
     this.user = this.userService.getUser();
     this.subscription = this.userService.userData.subscribe(
-      data => this.user = data
-    )
+      data => {
+        this.user = data;
+        
+      }
+    );
+    this.userNameAbbreviation = this.userService.calculateAbbreviation()
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe()
+    this.subscription.unsubscribe();
   }
+
+
 }
